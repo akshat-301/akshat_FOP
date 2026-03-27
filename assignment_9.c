@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+    int num, originalNum, remainder, result = 0;
+
+    // Input number
+    printf("Enter a three-digit number: ");
+    scanf("%d", &num);
+
+    originalNum = num;
+
+    // Calculate sum of cubes of digits
+    while (originalNum != 0) {
+        remainder = originalNum % 10;           // Extract digit
+        result += remainder * remainder * remainder; // Cube and add
+        originalNum /= 10;                      // Remove last digit
+    }
+
+    // Check Armstrong condition
+    if (result == num)
+        printf("%d is an Armstrong number.\n", num);
+    else
+        printf("%d is not an Armstrong number.\n", num);
+
+    return 0;
+}
